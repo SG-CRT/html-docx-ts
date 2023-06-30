@@ -1,0 +1,73 @@
+{
+  "name": "html-docx-ts",
+  "version": "0.0.3",
+  "description": "Convert HTML documents to docx format with header and footer.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "browser-or-node": "^1.2.1",
+    "jszip": "^3.4.0",
+    "tslib": "^1.13.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/browser-or-node": "^1.2.0",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^13.13.9",
+    "commitizen": "^4.1.2",
+    "cross-env": "^6.0.3",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
+    "jest": "^25.5.4",
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.5.1",
+    "ts-loader": "^6.2.2",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "lint": "tslint \"src/**/*\" --project tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "build": "rimraf dist/ && tsc",
+    "commit": "git-cz",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "release": "npm version patch && npm publish --registry http://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "lyh",
+    "email": "1572225671@qq.com",
+    "url": "https://lyh.com/"
+  },
+  "keywords": [
+    "html",
+    "docx",
+    "typescript",
+    "html-to-docx",
+    "html-docx-js",
+    "html-docx-js-typescript",
+    "header",
+    "footer",
+    "jszip"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SG-CRT/html-docx-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SG-CRT/html-docx-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SG-CRT/html-docx-ts/issues"
+  }
+}
