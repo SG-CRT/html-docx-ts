@@ -49,12 +49,12 @@ function renderDocumentFile(documentOptions) {
     var width = 0;
     var height = 0;
     if (orientation === 'landscape') {
-        height = 12240;
-        width = 15840;
+        height = 11906;
+        width = 16838;
     }
     else {
-        width = 12240;
-        height = 15840;
+        width = 11906;
+        height = 16838;
     }
     return templates_1.documentTemplate(width, height, orientation, marginsOptions);
 }
