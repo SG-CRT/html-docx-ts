@@ -18,8 +18,10 @@ Support node.js and browser enviroment, including vue/react/angular.
 
 #### Example:
 
+If you want to display page numbers, you can make the string equal to 'pageNum'
+
 ```js
-import { asBlob } from 'html-docx-js-typescript'
+import { asBlob } from 'html-docx-ts'
 import { saveAs } from 'file-saver' //save the file
 function exportDocx() {
   //set the config
@@ -46,7 +48,7 @@ function exportDocx() {
   const footerConfig = {
     leftStr: 'footerLeft',
     centerStr: 'footerCenter',
-    rightStr: 'footerRight',
+    rightStr: 'pageNum',//param equal to 'pageNum', that will show the page numbers
   }
 
   asBlob(HtmlStr, option, headerConfig, footerConfig).then(blobData => {
